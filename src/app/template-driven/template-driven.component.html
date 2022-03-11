@@ -1,0 +1,92 @@
+<article class="col-md-6 m-auto">
+    <h1>Enter your information</h1>
+    <form (ngSubmit)="onFormSubmit(form)" #form="ngForm">
+        <div class="form-group">
+            <label for="name">Enter your name</label>
+            <input 
+            name="name"
+            ngModel
+            required
+            type="text" placeholder="Enter here" class="form-control">
+        </div>
+        <div class="form-group">
+            <label for="">Enter your surname</label>
+            <input 
+            name="surname"
+            ngModel
+            required
+            type="text" placeholder="Enter here" class="form-control">
+        </div>
+        <div class="form-group">
+            <label for="">Enter your age</label>
+            <input 
+            name="age"
+            ngModel
+            type="number" placeholder="Enter here" class="form-control">
+        </div>
+        <div class="form-group">
+            <label for="">Enter your email</label>
+            <input 
+            name="email"
+            ngModel
+            required
+            type="email" placeholder="Enter here" class="form-control">
+        </div>
+        <div class="form-group">
+            <label for="">Enter your phone number</label>
+            <input 
+            name="phoneNumber"
+            ngModel
+            required
+            type="text" placeholder="Enter here" class="form-control">
+        </div>
+        <div class="form-group">
+            <label for="">Enter your personal id</label>
+            <input 
+            name="personalId"
+            ngModel
+            pattern="^[0-9]+[0-9]*$"
+            type="text" placeholder="Enter here" class="form-control">
+        </div>
+        <div class="form-group">
+            <label for="">Enter your password</label>
+            <input 
+            name="password"
+            ngModel
+            required
+            #firstPassword="ngModel"
+            type="password" placeholder="Enter here" class="form-control">
+        </div>
+        <div class="form-group">
+            <label for="">Enter your password again</label>
+            <input 
+            name="passwordAgain"
+            ngModel
+            required
+            #secondPassword="ngModel"
+            [ngClass]="{'errorInp':firstPassword.value != secondPassword.value && secondPassword.touched }"
+            type="password" placeholder="Enter here" class="form-control">
+        </div>
+        <fieldset ngModelGroup="address">
+            <div class="form-group">
+                <label for="country">Enter country</label>
+                <input 
+                name="country"
+                ngModel
+                type="text" placeholder="Enter here" class="form-control">
+            </div>
+            <div class="form-group">
+                <label for="country">Enter city</label>
+                <input 
+                name="city"
+                ngModel
+                type="text" placeholder="Enter here" class="form-control">
+            </div>
+        </fieldset>
+        <div class="form-group">
+            <button 
+            [disabled]="!form.valid"
+            type="submit" class="btn btn-primary col-md-12">Save</button>
+        </div>
+    </form>
+</article>

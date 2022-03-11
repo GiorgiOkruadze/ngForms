@@ -1,0 +1,15 @@
+.form-group {
+    margin:20px 0px;
+}
+
+article {
+    margin-top: 40px!important;
+}
+
+.errorInp {
+    border:1px solid red!important;
+}
+
+fieldset .form-group:first-child {
+    margin-top: 0px!important;
+}

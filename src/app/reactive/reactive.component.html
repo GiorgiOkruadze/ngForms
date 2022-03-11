@@ -1,0 +1,49 @@
+<button 
+(click)="addDefaultData()"
+class="btn btn-danger">Set Default Data</button>
+<article class="col-md-6 m-auto">
+    <h1>Enter student information</h1>
+    <form [formGroup]="studentRegistration" (ngSubmit)="onFormSubmit()" #form="ngForm">
+        <div class="form-group">
+            <label for="name">Enter your name</label>
+            <input formControlName="name" type="text" placeholder="Enter here" class="form-control">
+        </div>
+        <div class="form-group">
+            <label for="name">Enter your surname</label>
+            <input formControlName="surname" type="text" placeholder="Enter here" class="form-control">
+        </div>
+        <div class="form-group">
+            <label for="name">Enter your universityName</label>
+            <input formControlName="universityName" type="text" placeholder="Enter here" class="form-control">
+        </div>
+        <div class="form-group">
+            <label for="name">Enter your email</label>
+            <input formControlName="email" type="email" placeholder="Enter here" class="form-control">
+        </div>
+        <div class="form-group">
+            <label for="name">Enter your gpa</label>
+            <input formControlName="gpa" type="number" placeholder="Enter here" class="form-control">
+        </div>
+        <div class="form-group">
+            <label for="name">Enter your age</label>
+            <input formControlName="age" type="number" placeholder="Enter here" class="form-control">
+        </div>
+        <div class="form-group">
+            <label for="name">Enter your password</label>
+            <input formControlName="password" type="password" placeholder="Enter here" class="form-control">
+        </div>
+        <div formGroupName="address">
+            <div class="form-group">
+                <label for="name">Enter your country</label>
+                <input formControlName="country" type="text" placeholder="Enter here" class="form-control">
+            </div>
+            <div class="form-group">
+                <label for="name">Enter your city</label>
+                <input formControlName="city" type="text" placeholder="Enter here" class="form-control">
+            </div>
+        </div>
+        <div class="form-group">
+            <button type="submit" class="btn btn-dark col-md-12">Save</button>
+        </div>
+    </form>
+</article>
